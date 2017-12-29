@@ -23,7 +23,9 @@ class TweetWall extends React.Component {
 
   componentWillReceiveProps(nextProps){
     let allTweets = this.state.tweets
-    allTweets.unshift(nextProps.newTweets)
+    for (const element of nextProps.newTweets) {
+      allTweets.unshift(element)
+    }
     this.setState({
       tweets: allTweets
     })
