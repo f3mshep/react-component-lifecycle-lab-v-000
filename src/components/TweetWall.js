@@ -17,13 +17,12 @@ class TweetWall extends React.Component {
   }
 
   shouldComponentUpdate(nextProps){
-    debugger
+
     return nextProps.newTweets.length > 0
   }
 
   componentWillReceiveProps(nextProps){
     let allTweets = this.state.tweets
-    debugger
     allTweets.unshift(nextProps.newTweets)
     this.setState({
       tweets: allTweets
